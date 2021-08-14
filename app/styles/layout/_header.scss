@@ -115,7 +115,7 @@
     }
   }
 }
-@media screen and(min-width:768px) {
+@include minWidth(768px) {
   .header-menu-item:not(:first-child) {
     margin-left: 5rem;
   }
@@ -130,8 +130,10 @@
     }
   }
 }
-@media screen and (max-width: 1023px) {
-  min-height: unset;
+@include maxWidth(1023px) {
+  .header {
+    min-height: unset;
+  }
   .header-bottom {
     margin-top: 10.5rem;
   }
@@ -142,7 +144,7 @@
     }
   }
 }
-@media screen and (max-width: 767px) {
+@include maxWidth(767px) {
   .header-bottom-text {
     display: none;
   }

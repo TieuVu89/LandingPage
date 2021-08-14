@@ -5,3 +5,15 @@ mixin headerBottomItem(number, title)
     .header-bottom-item
         span.header-bottom-number= number
         span.header-bottom-text= title
+mixin blockBox(caption, title, desc)
+    .block-box
+        h3.block-box-caption= caption
+        h2.block-box-heading= title 
+        if desc
+            p.block-box-desc= desc
+mixin aboutItem(src, title, iconClass, alt= "")
+    .about-item
+        img.about-image(src= src, alt= alt)
+        .about-content
+            i.about-icon(class= iconClass)
+            span.about-title= title 
