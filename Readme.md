@@ -1,2 +1,3 @@
 - Required NodeJS installed
 - `npm install` then run `npm run dev`
+- Convert PSD to HTML,CSS using Gulp, Pug, Sass
