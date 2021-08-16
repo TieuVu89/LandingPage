@@ -66,3 +66,58 @@
   white-space: pre-wrap;
   word-break: break-all;
 }
+@mixin hoverEffect($item-class, $content-class) {
+  #{$item-class} {
+    position: relative;
+    z-index: 1;
+    transition: all 0.25s linear;
+    #{$content-class} {
+      @include absoluteFull();
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.25s linear;
+      z-index: 2;
+      @include flexbox(center, center, column);
+      background: linear-gradient(
+        to bottom,
+        rgba($primary-color, 0.8),
+        rgba($secondary-color, 0.8)
+      );
+    }
+    &::after {
+      content: "";
+      position: relative;
+      @include absoluteFull();
+      background-color: $third-color;
+      z-index: -1;
+    }
+    &:hover {
+      transform: translate(-1rem, -1rem);
+      #{$content-class} {
+        opacity: 1;
+        visibility: visible;
+      }
+      &::after {
+        transform: translate(1rem, 1rem);
+      }
+    }
+  }
+}
+@mixin touchSlider($width: 80%, $gap: 2.5rem, $padding: 1rem) {
+  display: grid !important;
+  justify-content: flex-start !important;
+  grid-auto-columns: $width;
+  grid-auto-flow: column;
+  grid-template-columns: unset;
+  grid-column-gap: $gap;
+  overflow-x: auto;
+  padding: $padding;
+  scroll-snap-type: x mandatory;
+  scroll-snap-stop: always;
+  margin-left: unset;
+  @include hideScroll;
+  & > * {
+    scroll-snap-align: start;
+    width: auto;
+  }
+}

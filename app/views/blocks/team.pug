@@ -1,0 +1,13 @@
+section.team
+    .container
+        +blockBox("Who we are", "Meet our team", "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem similique, repellat veniam nam dolores dolore, error atque sint laboriosam neque odio ipsam aliquid suscipit odit nobis sequi cumque animi consequuntur.")
+        .team-list
+            +teamItem("../images/img-team1.png","John William","UX Design")
+                +teamSocial("/facebook","/twitter","/pinterest","/instagram")
+            +teamItem("../images/img-team2.png")
+                +teamSocial
+            +teamItem("../images/img-team3.png")
+                +teamSocial
+section.brand
+    .container
+        img(src="../images/img-logos.png" alt="brands")

@@ -23,3 +23,35 @@ mixin serviceItem(src, title, desc)
         .service-item-info
             h3.service-item-title= title
             p.service-item-desc= desc
+mixin wedoItem(src, title, desc, active="")
+    .wedo-item(class= active)
+        .wedo-item-header
+            img(src= src).wedo-item-icon
+            h3.wedo-item-title= title
+            i.fal.fa-angle-up.wedo-item-arrow
+        .wedo-item-content
+            .wedo-item-text= desc
+mixin teamSocial(fb= "#", twitter= "#", pinterest= "#", instagram= "#")
+    ul.team-social
+        li.team-social-item
+            a.team-social-link(href= fb)
+                i.fab.fa-facebook-f
+        li.team-social-item
+            a.team-social-link(href= twitter)
+                i.fab.fa-twitter
+        li.team-social-item
+            a.team-social-link(href= pinterest)
+                i.fab.fa-pinterest
+        li.team-social-item
+            a.team-social-link(href= instagram)
+                i.fab.fa-instagram
+mixin teamItem(src= "../images/img-team1.png", name= "Chirstopher Campbell", position= "Frontend Developer")
+    .team-item
+        .team-main
+            img(src= src).team-image
+            .team-content
+                if block
+                    block
+        .team-info
+            h3.team-name= name
+            span.team-position= position
